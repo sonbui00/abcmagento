@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_Base
+ */
+-->
+<config>
+    <modules>
+        <Ultimo_Authorize>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ultimo_Authorize>
+    </modules>
+</config>

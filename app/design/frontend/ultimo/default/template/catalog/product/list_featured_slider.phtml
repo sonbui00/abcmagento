@@ -1,0 +1,116 @@
+<?php
+
+/**
+
+ * Featured Products Slider
+
+ */
+
+?>
+
+<?php
+
+    $_productCollection=$this->getLoadedProductCollection();
+
+    $_collectionSize = $_productCollection->count();
+	
+	$_helper = $this->helper('catalog/output');
+
+    $theme = $this->helper('ultimo');
+
+
+    $helpLabels = $this->helper('ultimo/labels');
+
+
+    $helpTemplate = $this->helper('ultimo/template');
+
+
+    $helpImg = $this->helper('infortis/image');
+
+
+    $sliderClasses = '';
+
+
+    $gridClasses = '';
+
+?>
+<!--Image Slider Start-->
+<script src="http://bxslider.com/lib/jquery.bxslider.js"></script>
+<script> 
+jQuery(document).ready(function(){
+  jQuery('.bxslider123').bxSlider({
+	auto: true,
+	speed:2000,
+	pause:6000
+  });
+});    
+</script>
+<div class="slider">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('custom-home-page-slider')->toHtml(); ?> 
+</div>
+</div>
+<div class="full">
+<?php //if ($_productCollection && ($_collectionSize = $this->getCollectionCount())): ?>
+
+<div class="col75">
+                    <div class="heading-bar">
+                        <div class="bar">
+                            <span class="title">Best sellers</span>
+                            <span class="viewall"><a href="<?php echo $this->getUrl(); ?>best-seller.html">View All</a></span>
+                        </div>
+                    </div>
+                    <?php foreach ($_productCollection as $_product): ?>
+					
+                    <div class="seller">
+                        <div class="full">
+                            <div class="seller-box">
+                               <a  href="<?php echo $_product->getProductUrl() ?>" >
+							   
+							   <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"class="ct" />
+							   
+							   <?php echo $helpLabels->getLabels($_product); //Product labels ?>
+							   
+                               </a>
+                                
+                                <div class="seller-box-list">
+                                    <ul>
+                                        <li><a href="<?php echo $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;"><img src="<?php echo $this->getskinUrl();?>images/heart.jpg" alt=""  title="Add To Wishlist"/></a></li>
+                                        <li><a href="<?php echo  $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);?>"><img src="<?php echo $this->getskinUrl();?>images/db.jpg" alt=""  title="Add To Compare"/></a></li>
+                                        <li><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><img src="<?php echo $this->getskinUrl();?>images/share.jpg" alt=""  title="Share This"/></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="open-sans-bold-14"><a href="javascript:void(0);"> <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></span>
+                            
+                            <div class="full pdgTop10">
+                                <div class="alignleft">
+                          <?php $this->_reviewsHelperBlock = $this->getLayout()->createBlock('review/helper'); ?>
+						  <?php  echo $this->_reviewsHelperBlock->getSummaryHtml($_product, false, false); ?>
+			                </div>
+                                
+                                <div class="alignright"><span class="open-sans-bold-18"><?php echo $this->getPriceHtml($_product, true) ?></span></div>
+                            </div>
+                            
+                             <?php 							 ?>
+                            <div class="alignleft">
+                            <?php if($_product->isSaleable()): ?>
+    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+<?php else: ?>
+    <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+<?php endif; ?>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach;?>
+                    </div>
+<?php// endif; ?>
+<div class="col22">
+                    <div class="img ghy">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('best-seller-banner-image')->toHtml(); ?> 
+                    </div>
+                </div>
+
+</div>

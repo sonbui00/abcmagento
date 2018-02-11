@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="block block-progress opc-block-progress">
+<div class="col50">
+						<div class="full">
+							<div class="heading-bar">
+								<div class="bar">
+									<span class="title">Checkout Information</span>
+								</div>
+							</div>
+   
+    <div class="block-content">
+        <dl>
+            <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
+            <div id="billing-progress-opcheckout">
+                <?php echo $this->getChildHtml('billing.progress') ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
+            <div id="shipping-progress-opcheckout">
+                <?php echo $this->getChildHtml('shipping.progress') ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show')): ?>
+            <div id="shipping_method-progress-opcheckout">
+                <?php echo $this->getChildHtml('shippingmethod.progress') ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
+            <div id="payment-progress-opcheckout">
+                <?php echo $this->getChildHtml('payment.progress') ?>
+            </div>
+            <?php endif; ?>
+        </dl>
+    </div>
+</div>
+</div>
+</div>
+<div class="width46">
+						<div class="full">
+							<div class="heading-bar">
+								<div class="bar">
+									<span class="title">You Are Buying</span>
+								</div>
+							</div>
+							
+							<?php $cart = Mage::getModel('checkout/cart')->getQuote();
+foreach ($cart->getAllItems() as $item) {
+    
+    $productPrice = $item->getProduct()->getPrice();
+?>
+<div class="full pdgTop15">
+								<div class="buy-image">
+									<a href="javascript:void(0)"><img src="<?php echo  Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail'); ?>" alt="" /></a>
+									
+								</div>
+								
+								<div class="text-buy-cont">
+									<span class="open-sans-bold-12">
+										<p><?php echo $productName = $item->getProduct()->getName(); ?></p>
+									</span>
+									<span class="open-sans-bold-18"><?php echo number_format($productPrice, 2, '.', ''); ?></span>
+								</div>
+								
+								<div class="border-bar pdgTop10"></div>
+									
+							</div>
+							<?php }?>
+		
+						</div>
+					</div>

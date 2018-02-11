@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ultimo_Authorize>
+            <version>0.1.0</version>
+        </Ultimo_Authorize>
+    </modules>
+    <global>
+        <blocks>
+            <ultimoauthorize>
+                <class>Ultimo_Authorize_Block</class>
+            </ultimoauthorize>
+        </blocks>
+        <helpers>
+            <ultimoauthorize>
+                <class>Ultimo_Authorize_Helper</class>
+            </ultimoauthorize>
+        </helpers>
+        <models>
+            <ultimoauthorize>
+                <class>Ultimo_Authorize_Model</class>
+            </ultimoauthorize>
+            <sales>
+                <rewrite>
+                    <order_payment>Ultimo_Authorize_Model_Order_Payment</order_payment>
+                </rewrite>
+            </sales>
+        </models>
+    </global>
+    <default>
+        <payment>
+            <ultimoauthorize>
+                <active>1</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <cgi_url>https://test.authorize.net/gateway/transact.dll</cgi_url>
+                <cgi_url_td>https://api.authorize.net/xml/v1/request.api</cgi_url_td>
+                <debug>0</debug>
+                <email_customer>0</email_customer>
+                <login backend_model="adminhtml/system_config_backend_encrypted"/>
+                <merchant_email/>
+                <model>ultimoauthorize/authorizenet</model>
+                <order_status>processing</order_status>
+                <payment_action>authorize</payment_action>
+                <test>0</test>
+                <title>Ultimo Credit Card (Authorize.net)</title>
+                <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
+                <allowspecific>0</allowspecific>
+                <currency>USD</currency>
+                <partial_authorization_checksum_checking>1</partial_authorization_checksum_checking>
+                <allow_in_xpos_only>1</allow_in_xpos_only>
+            </ultimoauthorize>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,329 @@
+
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+.wrapper{ width:98%;}
+.col75{ width:98%;}
+.col22{ width:100%;}
+.header .alignleft{ float:none; margin-left:auto; margin-right:auto; display:block; text-align:center;}
+.header .alignright{ float:none; margin-left:auto; margin-right:auto; display:block; text-align:center;}
+.top-menu li{ padding:10px;}
+.logo{ margin-left:auto; float:none; margin-right:auto; display:block; text-align:center;}
+.search-cont{ margin-left:auto; margin-right:auto; display:block; float:none; width:300px; display:block;}
+.rd-cont{ width:62%;}
+.seller{ margin-right:2%; margin-left:2%; width:96%;}
+.img{ margin-left:auto; margin-right:auto; display:block; text-align:center; width:272px; margin-top:20px;}
+.col48{ width:98%;}
+.seller-box-d{ margin-bottom:20px;}
+.left-bar{margin-left:auto; margin-right:auto; float:none;display:block; margin-bottom:20px; width:250px;}
+.seller-box-right-panel{margin-left:auto; margin-right:auto; float:none;display:block; text-align:center; width:250px;}
+ul.ads li{ width:100%; padding:10px 0px;}
+ul.ads li img{ margin-left:auto; margin-right:auto; display:block; width:270px;}
+.seller-box-list{ right:10px;}
+.store-list li{ margin-right:2%; width:96%; margin-left:2%; margin-bottom:20px;}
+.logos li{ margin-left:auto; margin-right:auto; padding:20px 0px; display:block; text-align:center;}
+.full-img img{width:100%; height:auto;}
+.half-img img{width:100%; height:auto;}
+.col35{ width:100%;}
+.col62{ width:100%;}
+.Sub-scribe{ width:100%;}
+ul.infolist{ margin-right:0px; width:100%; margin-bottom:20px;}
+.subscribe-cont input.sb{ width:60%;}
+.seller-box-right-panel .alignleft{ margin-left:auto; margin-right:auto; display:block; text-align:center; float:none; clear:both;}
+.seller-box-right-panel .alignright{ margin-top:5px; margin-bottom:5px; margin-left:auto; margin-right:auto; display:block; text-align:center; float:none; clear:both;}
+.menu{ position:absolute; height:auto; top:45px; z-index:99999;}
+.menu ul li{ width:100%;}
+
+/**Login page**/
+.login-fld-cont{ width:98%;}
+.login-fld-rgt-cont{ width:98%;}
+.col50{ width:100%;}
+.ad270{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:20px; float:none;}
+
+/**List page**/
+.col23{ width:99%;}
+.col74{ width:98%; margin-top:30px;}
+.acs-cont{ float:none; margin-left:auto; margin-right:auto; display:block; width:240px; margin-top:15px; clear:both;}
+ul.ads{ margin-bottom:20px;}
+
+/**account-feedback**/
+.col54{ width:98%;}
+.col42{ width:98%;}
+.floatRight { width:100%;}
+.floatRight a.cancel{ margin-bottom:10px; text-align:center; float:left; width:100%; text-align:center;}
+.floatRight a.red-btn{ margin-left:auto; margin-right:auto; display:block; text-align:center; width:120px; clear:both;}
+
+.width46{ width:98%;}
+.width18{ display:none;}
+.width16{ margin-bottom:30px; margin-left:10%; margin-right:10%; width:80%;}
+.heads td{ border-left:1px solid #e2e2e2;}
+.heads:last-child td{ border-right:1px solid #e2e2e2;}
+
+
+.col32{ width:98%; margin:0px}
+.thumbnail-slider{ width:100%;}
+.thumbnail-slider img{ width:100%; height:auto;}
+.col40{ width:100%; margin:20px 0px;}
+.col26{ width:100%;}
+.img-ad{ width:100%;}
+.img-ad img{ margin-left:auto; margin-right:auto; width:270px; display:block;}
+.store-list a.plus-icon{ width:100%; margin:10px 0px;}
+.equal-to{ width:100%; margin:10px 0px;}
+.sales-container{ width:100%;}
+.widht62{ width:100%; margin-right:0px;}
+.bar .tabs-cont li a{ padding:10px; font-size:10px;}
+.width35{ width:100%; margin-top:30px;}
+
+
+.menu ul li:hover ul.sub-menu{ position:inherit; width:100%; background:#fff;}
+.menu ul li:hover ul.sub-menu li a{ color:#fff;}
+
+}
+@media only screen and (min-width: 200px) and (max-width: 360px) {
+
+.shoping-bag .open-sans-bold-18{ font-size:8px;}
+table.shoping-bag td{ padding:0px 5px;}
+table.shoping-bag td.img-small{ width:50px;}
+table.shoping-bag td.img-small img{ width:30px;}
+.shoping-bag .icon i{ font-size:13px;}
+.shoping-bag .open-sans-semi-bold-24{ font-size:14px;}
+.shoping-bag .open-sans-semi-bold-14{ font-size:11px;}
+.shoping-bag .open-sans-bold-14{ font-size:9px;}
+.radius-box span{ padding:5px 0px;}
+}
+@media only screen and (min-width: 361px) and (max-width: 500px) {
+.shoping-bag .open-sans-bold-18{ font-size:9px;}
+table.shoping-bag td{ padding:0px 5px;}
+table.shoping-bag td.img-small{ width:50px;}
+table.shoping-bag td.img-small img{ width:30px;}
+.shoping-bag .icon i{ font-size:13px;}
+.shoping-bag .open-sans-semi-bold-24{ font-size:14px;}
+.shoping-bag .open-sans-semi-bold-14{ font-size:12px;}
+.shoping-bag .open-sans-bold-14{ font-size:10px;}
+.radius-box span{ padding:5px 0px;}
+}
+
+@media only screen and (min-width: 501px) and (max-width: 640px) {
+.shoping-bag .open-sans-bold-18{ font-size:10px;}
+table.shoping-bag td{ padding:0px 5px;}
+table.shoping-bag td.img-small{ width:50px;}
+table.shoping-bag td.img-small img{ width:30px;}
+.shoping-bag .icon i{ font-size:13px;}
+.shoping-bag .open-sans-semi-bold-24{ font-size:14px;}
+.shoping-bag .open-sans-semi-bold-14{ font-size:12px;}
+.shoping-bag .open-sans-bold-14{ font-size:11px;}
+.radius-box span{ padding:5px 0px;}
+.col32{ width:98%; margin:0px}
+.thumbnail-slider{ width:100%;}
+.thumbnail-slider img{ width:100%; height:auto;}
+.col40{ width:100%; margin:20px 0px;}
+.col26{ width:100%;}
+.img-ad{ width:100%;}
+.img-ad img{ margin-left:auto; margin-right:auto; width:270px; display:block;}
+.store-list a.plus-icon{ width:100%; margin:10px 0px;}
+.equal-to{ width:100%; margin:10px 0px;}
+.sales-container{ width:100%;}
+.widht62{ width:100%; margin-right:0px;}
+.bar .tabs-cont li a{ padding:10px; font-size:10px;}
+.width35{ width:100%; margin-top:30px;}
+
+.sidebar ul.side-nav li{ float:none; margin-right:auto; margin-left:auto; width:285px; display:block;}
+
+.menu ul li:hover ul.sub-menu{ position:inherit; width:100%; background:#fff;}
+.menu ul li:hover ul.sub-menu li a{ color:#fff;}
+}
+
+@media only screen and (min-width: 501px) and (max-width: 700px) {
+.wrapper{ width:98%;}
+.col75{ width:98%;}
+.col22{ width:100%;}
+.header .alignleft{ float:none; margin-left:auto; margin-right:auto; display:block; text-align:center;}
+.header .alignright{ float:none; margin-left:auto; margin-right:auto; display:block; text-align:center;}
+.top-menu li{ padding:10px;}
+.logo{ margin-left:auto; float:none; margin-right:auto; display:block; text-align:center;}
+.search-cont{ margin-left:auto; margin-right:auto; display:block; float:none; width:96%; display:block;}
+.rd-cont{ width:62%;}
+.seller{ margin-right:20%; margin-left:20%; width:60%;}
+.img{ margin-left:auto; margin-right:auto; display:block; text-align:center; width:272px; margin-top:20px;}
+.col48{ width:98%;}
+.seller-box-d{ margin-bottom:20px;}
+.left-bar{margin-left:auto; margin-right:auto; float:none;display:block; margin-bottom:20px; width:60%;}
+.seller-box-right-panel{margin-left:auto; margin-right:auto; float:none;display:block; text-align:center; width:60%;}
+ul.ads li{ width:100%; padding:10px 0px;}
+ul.ads li img{ margin-left:auto; margin-right:auto; display:block; width:270px;}
+.seller-box-list{ right:10px;}
+.store-list li{ margin-right:20%; width:60%; margin-left:20%; margin-bottom:20px;}
+.logos li{ margin-left:auto; margin-right:auto; padding:20px 0px; display:block; text-align:center;}
+.full-img img{width:100%; height:auto;}
+.half-img img{width:100%; height:auto;}
+.col35{ width:100%;}
+.col62{ width:100%;}
+.Sub-scribe{ width:100%;}
+ul.infolist{ margin-right:0px; width:100%; margin-bottom:20px;}
+.subscribe-cont input.sb{ width:60%;}
+.seller-box-right-panel .alignleft{ margin-left:auto; margin-right:auto; display:block; text-align:center; float:none; clear:both;}
+.seller-box-right-panel .alignright{ margin-top:5px; margin-bottom:5px; margin-left:auto; margin-right:auto; display:block; text-align:center; float:none; clear:both;}
+.heading-bar{ margin-left:20%; margin-right:20%; width:60%;}
+.menu{ position:absolute; height:auto; top:45px; z-index:99999;}
+.menu ul li{ width:100%;}
+.ad270{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:20px; float:none;}
+.list {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+}
+.col23{ width:99%;}
+.col74{ width:98%;}
+.col54{ width:98%;}
+
+.buy-image{ width:70px; float:left;}
+.buy-image img{ width:100%; padding:0px; height:auto;}
+.width18{ display:none;}
+.width16 {
+    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+}
+.heads td{ border-left:1px solid #e2e2e2;}
+.heads:last-child td{ border-right:1px solid #e2e2e2;}
+
+.col32{ width:100%; margin-right:0px;}
+.col40{ width:100%; margin-right:0px;}
+.col26{ width:100%;}
+.img-ad{ width:100%;}
+.img-ad img{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:40px;}
+.store-list a.plus-icon{ width:100%; margin:10px 0px;}
+.equal-to{ width:100%; margin:10px 0px;}
+.sales-container{ width:45%;}
+.widht62{ width:100%;}
+.widht62 .heading-bar{ margin:0px; width:100%;}
+.width35{ width:100%; margin:20px 0px;}
+.sidebar ul.side-nav li{ float:none; margin-right:auto; margin-left:auto; width:285px; display:block;}
+
+.menu ul li:hover ul.sub-menu{ position:inherit; width:100%; background:#fff;}
+.menu ul li:hover ul.sub-menu li a{ color:#fff;}
+
+}
+@media only screen and (min-width: 701px) and (max-width: 800px) {
+.menu{ position:absolute; height:auto; top:45px; z-index:99999;}
+.menu ul li{ width:100%;}
+.ad270{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:20px; float:none;}
+.ad270 img{ width:98%; height:auto;}
+.login-fld-cont span{ width:150px;}
+.login-fld-cont-full span{ width:150px;}
+.col74 .seller{ width:48%; margin-right:10px; min-height:400px;}
+.buy-image{ width:70px; float:left;}
+.buy-image img{ width:100%; padding:0px; height:auto;}
+.width18{ display:none;}
+.width16 {
+    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+}
+.heads td{ border-left:1px solid #e2e2e2;}
+.heads:last-child td{ border-right:1px solid #e2e2e2;}
+
+.col32{ width:100%; margin-right:0px;}
+.col40{ width:100%; margin-right:0px;}
+.col26{ width:100%;}
+.img-ad{ width:100%;}
+.img-ad img{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:40px;}
+.store-list a.plus-icon{ width:100%; margin:10px 0px;}
+.equal-to{ width:100%; margin:10px 0px;}
+.widht62{ width:100%;}
+.widht62 .heading-bar{ margin:0px; width:100%;}
+.width35{ width:100%; margin:20px 0px;}
+.packagedetails .store-list{ width:40%; float:none; margin-left:auto; margin-right:auto; display:block;}
+.packagedetails .store-list li{ width:100%;}
+.packagedetails .sales-container{ width:100%;}
+
+.menu ul li:hover ul.sub-menu{ position:inherit; width:100%; background:#fff;}
+.menu ul li:hover ul.sub-menu li a{ color:#fff;}
+}
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+.menu ul li a{ padding:16px 5px;}
+.menu ul li{ font-size:12px;}
+.ad270{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:20px; float:none;}
+.ad270 img{ width:98%; height:auto;}
+.login-fld-cont span{ width:150px;}
+.login-fld-cont-full span{ width:150px;}
+.col74 .seller{ width:48%; margin-right:10px; min-height:400px;}
+.buy-image{ width:70px; float:left;}
+.buy-image img{ width:100%; padding:0px; height:auto;}
+.width18{ display:none;}
+.width16 {
+    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+}
+.heads td{ border-left:1px solid #e2e2e2;}
+.heads:last-child td{ border-right:1px solid #e2e2e2;}
+
+.col32{ width:100%; margin-right:0px;}
+.col40{ width:100%; margin-right:0px;}
+.col26{ width:100%;}
+.img-ad{ width:100%;}
+.img-ad img{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:40px;}
+.store-list a.plus-icon{ width:100%; margin:10px 0px;}
+.equal-to{ width:100%; margin:10px 0px;}
+.widht62{ width:100%;}
+.widht62 .heading-bar{ margin:0px; width:100%;}
+.width35{ width:100%; margin:20px 0px;}
+.packagedetails .store-list{ width:40%; float:none; margin-left:auto; margin-right:auto; display:block;}
+.packagedetails .store-list li{ width:100%;}
+.packagedetails .sales-container{ width:100%;}
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1000px) {
+
+.wrapper{ width:98%;}
+.search-cont{ margin-left:20px;}
+.col75{ width:98%;}
+.col22{ width:100%;}
+.seller{ margin-right:10px;}
+.img{ margin-left:auto; margin-right:auto; display:block; text-align:center; width:272px; margin-top:20px;}
+.left-bar{margin-left:auto; margin-right:auto; float:none;display:block; margin-bottom:20px; width:60%;}
+.seller-box-right-panel{margin-left:auto; margin-right:auto; float:none;display:block; text-align:center; width:60%;}
+.seller-box-right-panel .alignleft{ margin-left:auto; margin-right:auto; display:block; text-align:center; float:none; clear:both;}
+.seller-box-right-panel .alignright{ margin-top:5px; margin-bottom:5px; margin-left:auto; margin-right:auto; display:block; text-align:center; float:none; clear:both;}
+
+ul.logos{margin-left:auto; margin-right:auto; display:block; text-align:center; width:640px;}
+ul.ads{margin-left:auto; margin-right:auto; display:block; text-align:center; width:640px;}
+ul.ads li{ padding:10px 10px;}
+ul.ads li img{ margin-left:auto; margin-right:auto; display:block; width:270px;}
+.store-list li{ width:31%; margin-bottom:2%;}
+.full-img img{width:100%; height:auto;}
+.half-img img{width:100%; height:auto;}
+.col35{ width:100%;}
+.col62{ width:100%;}
+.Sub-scribe{ width:100%;}
+ul.infolist{ margin-right:2%; width:48%; margin-bottom:20px;}
+.subscribe-cont input.sb{ width:60%;}
+}
+
+
+
+@media only screen and (min-width: 1001px) and (max-width: 1199px) {
+.wrapper{ width:98%;}
+.search-cont{ margin-left:20px;}
+.seller{ width:30%;}
+.seller-box-right-panel{ width:58%;}
+ul.ads{margin-left:auto; margin-right:auto; display:block; text-align:center; width:640px;}
+.logos li{ padding:10px 4px;}
+.full-img img{width:100%; height:auto;}
+.half-img img{width:100%; height:auto;}
+.subscribe-cont input.sb{ width:56%;}
+.img img{ width:100%; height:auto;}
+.menu ul li a{ padding:16px 10px;}
+.menu ul li{ font-size:12px;}
+.ad270{ margin-left:auto; margin-right:auto; display:block; text-align:center; margin-top:20px; float:none;}
+.ad270 img{ width:98%; height:auto;}
+.login-fld-cont span{ width:150px;}
+.login-fld-cont-full span{ width:150px;}
+.buy-image{ width:70px; float:left;}
+.buy-image img{ width:100%; padding:0px; height:auto;}
+.width18{ width:16%;}
+}

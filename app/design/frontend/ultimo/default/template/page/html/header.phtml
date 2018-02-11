@@ -1,0 +1,132 @@
+<?php
+
+/**
+
+ * @var Mage_Page_Block_Html_Header $this
+
+ */
+
+?>
+<style>
+.nav-9{
+	display:none;
+}
+</style>
+<?php $miniCartHtml = $this->getChildHtml('cart_sidebar'); ?>
+			<div class="header">
+				<div class="alignleft">
+					<span class="open-sans-bold-12">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tagline')->toHtml(); ?>
+					</span>
+				</div>
+				
+				<div class="alignright">
+					<ul class="top-menu">
+					
+						<li><a href="<?php echo $this->getUrl();?>contacts">Contact Us</a></li>
+						 <?php  if ($this->helper('customer')->isLoggedIn() ) {?>
+        <li><a href="<?php echo $this->getUrl();?>customer/account/login/">My account</a></li>
+   <?php } else { ?>
+         <li><a href="<?php echo $this->getUrl();?>customer/account/login/">Log in</a></li>
+		  <?php  }?>
+
+						
+						<li><a href="<?php echo $this->getUrl();?>customer/account/login/">Sign up</a></li>
+					</ul>
+				</div>
+				<div class="full pdgTop10">
+					<span class="logo"><a href="<?php echo $this->getUrl();?>"><img src="<?php echo $this->getSkinUrl();?>images/logo.jpg" alt="" /></a></span>
+					<div class="search-cont">
+					<?php echo $searchHtml = $this->getChildHtml('topSearch');?>
+					</div>
+					
+					
+					<div class="outer-cart">
+																<div id="currency-switcher-wrapper-regular" class="item item-right">
+																
+																<?php if ($miniCartHtml): //Mini cart ?>
+																
+																<div id="mini-cart-wrapper-regular">
+																
+																<?php echo $miniCartHtml; ?>
+																
+																</div>
+																
+																<?php endif; ?>
+																
+																<?php //echo $currencySwitcher; ?>
+																
+																</div>
+						<!---<div class="cart-block">
+							<span class="open-sans-bold-heading-14">You’ve added 3 items in your bag</span>
+							<ul class="list">
+								<li>
+									<label class="img"> <img src="images/img1.jpg" alt="" /></label>
+									<div class="outer-list">
+										<p>Acesonic KOD-3000 Blu-ray Disc Jukebox Karaoke Player</p>
+										<span class="alignright">$499.99</span>
+									</div>	
+									<a class="cross-img" href="javascript:void(0);"><img src="images/cross.jpg" alt="" /></a>
+								</li>
+								<li>
+									<label class="img"> <img src="images/img1.jpg" alt="" /></label>
+									<div class="outer-list">
+										<p>Acesonic KOD-3000 Blu-ray Disc Jukebox Karaoke Player</p>
+										<span class="alignright">$499.99</span>
+									</div>	
+									<a class="cross-img" href="javascript:void(0);"><img src="images/cross.jpg" alt="" /></a>
+								</li>
+								<li>
+									<label class="img"> <img src="images/img1.jpg" alt="" /></label>
+									<div class="outer-list">
+										<p>Acesonic KOD-3000 Blu-ray Disc Jukebox Karaoke Player</p>
+										<span class="alignright">$499.99</span>
+									</div>	
+									<a class="cross-img" href="javascript:void(0);"><img src="images/cross.jpg" alt="" /></a>
+								</li>
+								
+								<div class="full pdgTop10">
+									<div class="total">Total:</div>
+									<div class="price-total">$499.00</div>
+									<a class="btn" href="javascript:void(0);">Checkout</a>
+								</div>
+							</ul>
+						
+						</div>-->
+					</div>
+					
+				</div>
+			</div>
+
+<div class="header-container header-regular" id="top">
+
+<div class="header-container2">
+
+<div class="header-container3">
+	<div id="header-nav" class="nav-container sticky-container skip-content">
+
+		<div class="nav container clearer<?php if ($classes['nav']) echo " " . $classes['nav']; ?>">
+
+			<div class="inner-container">
+
+				<?php  echo $this->getChildHtml('topMenu') ?>
+
+			</div> <!-- end: inner-container -->
+
+		</div> <!-- end: nav -->
+
+	</div> <!-- end: nav-container -->
+
+
+
+</div> <!-- end: header-container3 -->
+
+</div> <!-- end: header-container2 -->
+
+</div> <!-- end: header-container -->
+
+
+
+
+
+

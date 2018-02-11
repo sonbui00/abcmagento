@@ -1,0 +1,31 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * - Each review title: "a" replaced with "span.heading"
+ */
+?>
+
+<?php $ReviewsCollection = $this->getReviewsCollection()->getItems(); if( count( $ReviewsCollection ) ) {    $x = 1;     foreach( $ReviewsCollection as $_review ){         // get review title        echo $_review->getTitle();         $_votes = $_review->getRatingVotes();        if (count($_votes)){            foreach ($_votes as $_vote){                echo $_vote->getRatingCode().' - '.$_vote->getPercent().'%<br />';            }        }         // get review date        echo $this->formatDate($_review->getCreatedAt()).'<br />';         // get review detail        echo $_review->getDetail().'<br />';         // get how wrote the review        echo $_review->getNickname().'<br />';         // because you cant setPageSize with this collection it's best to break the loop.        if($x == 4){ break; }         $x++;    }}?><?php echo "test" ;?>

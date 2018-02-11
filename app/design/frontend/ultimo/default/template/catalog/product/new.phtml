@@ -1,0 +1,63 @@
+<?php
+
+  //  $_productCollection = $this->getProductCollection();
+
+?>
+
+<?php // if ($_productCollection && ($_collectionSize = $_productCollection->getSize())):
+ ?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<?php  $_columnCount = $this->getColumnCount(); ?>
+<div class="full">
+                <div class="col98">
+                    <div class="heading-bar">
+                        <div class="bar">
+                            <span class="title">New In Store</span>
+							<span class="viewall"><a href="http://www.abckaraoke.com/index.php/new-in-store.html">View All</a></span>
+                        </div>
+                    </div>
+                      
+                    <ul class="store-list">
+                        <?php foreach ($_products->getItems() as $_product): ?>
+                     
+
+
+                        <li>
+                            <div class="seller-box-store">
+                    
+<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"class="ct" /></a>
+                                   
+                                <span class="new-tile"><img alt="" src="<?php echo $this->getSkinUrl();?>images/NEW.png"></span>
+                                
+                                <div class="seller-box-list">
+                                    <ul>
+                                        <li><a href="<?php echo $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;"><img src="<?php echo $this->getskinUrl();?>images/heart.jpg" alt=""  title="Add To Wishlist"/></a></li>
+                                        <li><a href="<?php echo  $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);?>"><img src="<?php echo $this->getskinUrl();?>images/db.jpg" alt="" title="Add To Compare" /></a></li>
+                                        <li><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><img src="<?php echo $this->getskinUrl();?>images/share.jpg" alt="" title="Share To" /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="open-sans-bold-headings-14">
+                               <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+							   <?php //echo substr($this->escapeHtml($_product->getName()),0, 20).'....'?>
+							   <?php echo $this->escapeHtml($_product->getName()) ?></a>
+                            </div>
+                            
+                            <div class="open-sans-bold-headings-18" style="float:right;text-align:right;width:49%;">
+								<?php echo $this->getPriceHtml($_product, true, '-new') ?> 
+							
+							</div>
+							<div class="open-sans-bold-headings"  style="float:left;text-align:left;width:50%;  padding-top: 8px;">
+								<?php echo $this->getReviewsSummaryHtml($_product, 'short') ?> 
+							</div>
+                        
+                            <div class="full pdgTop10"><?php if($_product->isSaleable()): ?>                        <p>
+		<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>                    <?php else: ?>                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>                    <?php endif; ?>
+                          </div>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+            <?php endif; ?>

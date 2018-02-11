@@ -1,0 +1,73 @@
+<?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('AboutABCkaraoke')->toHtml(); ?> 
+
+
+</div>
+</div>
+<style>
+
+.social_footer_links img{width:51px !important;height: 51px !important;float:none!important ; display:inline-block; padding:5px !important;}
+.social_footer_links{
+	text-align:center
+}
+.social_footer_links{padding-left:5px;}
+
+</style>
+	<div class="footer">
+			<div class="col98">
+			
+				<div class="col35">
+					<div class="alignleft">
+						<a href="<?php echo $this->getUrl();?>">
+							<img src="<?php echo $this->getSkinUrl();?>images/logo11.jpg" alt="" />
+						</a>
+						
+						
+						<div class='social_footer_links'>						
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social_links')->toHtml(); ?>
+						</div>	
+					</div>
+				</div>
+				
+				<div class="col62">
+					<ul class="infolist">
+						<label class="open-sans-bold-title-14">Company Info</label>
+						<span class="red-border"></span>
+						<li><a href="<?php echo $this->getUrl();?>about-us/">About Us</a></li>
+						<li><a href="<?php echo $this->getUrl();?>contacts">Contact Us</a></li>
+						<li><a href="<?php echo $this->getUrl();?>privacy-policy">Privacy Policy</a></li>
+					</ul>
+					
+					<ul class="infolist">
+						<label class="open-sans-bold-title-14">Customer services</label>
+						<span class="red-border"></span>
+						<li><a href="<?php echo $this->getUrl();?>return-exchange/">Return &amp; Exchange</a></li>
+						<li><a href="<?php echo $this->getUrl();?>shipping-pick-up/">Shipping &amp; Pick up</a></li>
+						<li><a href="<?php echo $this->getUrl();?>warranty/">Warranty</a></li>
+						<li><a href="<?php echo $this->getUrl();?>install_repair_service/">Install &amp; Repair</a></li>
+					</ul>
+					
+					<div class="Sub-scribe">
+						<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+						<label class="open-sans-bold-title-14">Subscribe </label>
+						<span class="red-border"></span>
+						<p>Sign up for email and get amazing deals on the hottest stuff, sent right to your inbox.</p>
+						<div class="subscribe-cont">
+							<input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="sb required-entry validate-email" />
+							<input class="sb-red-btn" value="Subscribe" type="submit" />
+						</div>
+       
+					    </form>
+					     </div>
+					    <script type="text/javascript">
+					    //<![CDATA[
+					        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+					    //]]>
+					    </script>
+
+
+					</div>
+					
+				</div>
+					
+			</div>
+		

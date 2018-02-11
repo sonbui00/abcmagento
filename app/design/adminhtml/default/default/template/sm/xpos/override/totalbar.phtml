@@ -1,0 +1,66 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if( sizeof($this->getTotals()) > 0 ): ?>
+    <div class="box">
+        <div class="entry-edit">
+            <table border="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="a-center">
+                        <div <?php $total = $this->getTotals(); if ($total[0]['grand']): ?>class="grand-total"<?php endif; ?>>
+                            <?php echo $total[0]['label'] ?><br />
+                            <?php echo$total[4]['value'] ?>
+                        </div>
+                    </td>
+                    <td class="a-center">
+                        <div <?php  if ($total[1]['grand']): ?>class="grand-total"<?php endif; ?>>
+                            <?php echo $total[1]['label'] ?><br />
+                            <?php echo$total[1]['value'] ?>
+                        </div>
+                    </td>
+                    <td class="a-center">
+                        <div <?php  if ($total[2]['grand']): ?>class="grand-total"<?php endif; ?>>
+                            <?php echo $total[2]['label'] ?><br />
+                            <?php echo$total[2]['value'] ?>
+                        </div>
+                    </td>
+                    <td class="a-center">
+                        <div <?php if ($total[3]['grand']): ?>class="grand-total"<?php endif; ?>>
+                            <?php echo $total[3]['label'] ?><br />
+                            <?php echo$total[3]['value'] ?>
+                        </div>
+                    </td>
+                    <td class="a-center">
+                        <div <?php if ($total[4]['grand']): ?>class="grand-total"<?php endif; ?>>
+                            <?php echo $total[4]['label'] ?><br />
+                            <?php echo$total[4]['value'] ?>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<?php endif; /*var_dump($this->getParentBlock()->getOrderTotalbarData())*/  ?>

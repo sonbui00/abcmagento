@@ -1,0 +1,77 @@
+
+<script>
+jQuery(document).ready(function(){
+
+	jQuery('#sameer').parent('.full').parent('.full').css('width','50%');
+})
+</script>
+<div class="full" style="float:left;">
+<?php
+
+   
+    $_productCollection=$this->getLoadedProductCollection();
+
+    $_collectionSize = $_productCollection->count();
+	
+	$_helper = $this->helper('catalog/output');
+
+    $theme = $this->helper('ultimo');
+
+    $helpLabels = $this->helper('ultimo/labels');
+
+    $helpTemplate = $this->helper('ultimo/template');
+
+    $helpImg = $this->helper('infortis/image');
+
+    $sliderClasses = '';
+
+    $gridClasses = '';
+
+?>
+<?php// if ($_productCollection && ($_collectionSize = $this->getCollectionCount())): ?>
+<div class="col48" style="width: 96% !important; float:left;" id='sameer'>
+                    <div class="heading-bar">
+                        <div class="bar">
+                            <span class="title">System Package</span>
+                            <span class="viewall"><a href="<?php echo $this->getUrl(); ?>system-package.html">View All</a></span>
+                        </div>
+                    </div>
+                    <?php foreach ($_productCollection as $_product): ?>
+                    
+                    <div class="packages">
+                        <div class="left-bar">
+                            <div class="seller-box-d">
+                                <a  href="<?php echo $_product->getProductUrl() ?>" ><img width="170" height="167" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"class="ct" />
+								
+								<?php echo $helpLabels->getLabels($_product); //Product labels ?>
+								
+                                </a><!-- <span class="new-tile"><img alt="" src="images/NEW.png"></span> -->
+                            </div>
+                        </div>
+                        
+                        <div class="seller-box-right-panel">
+                            <span class="title-14"> <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></span>
+ 
+							<div class='srtdesc_ok' style="word-break: break-all;height:207px;">
+								<?php echo substr($_product->getShortDescription(),0,199)."..."; ?>
+							</div>
+                        
+                            <div class="full pdgTop10">
+                                <div class="alignleft">
+									<?php if($_product->isSaleable()): ?>
+									<button style="margin-top:0px;" type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+									<?php else: ?>
+									<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+									<?php endif; ?>
+                                </div>
+								<div class="alignright">
+									<span class="open-sans-bold-18" style="margin-top:10px"><?php echo $this->getPriceHtml($_product, true, '-new') ?></span>
+								</div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+                <?php //endif;?>
+					</div>

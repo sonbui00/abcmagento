@@ -1,0 +1,481 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+
+<script type="text/javascript" src="<?php echo $this->getSkinUrl(); ?>js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    
+    
+    $(document).ready(function(){
+        $('#descr').click(function(){
+            $('.firsttab').show()
+            $('.secondTab').hide();
+            $('.thirdtab').hide();
+            $(".HorizontalTab ul li").removeClass('activetabs');
+            $(this).addClass('activetabs');
+        })
+        $('#technical').click(function(){
+            $('.secondtab').show()
+            $('.firsttab').hide();
+            $('.thirdTab').hide();
+            $(".HorizontalTab ul li").removeClass('activetabs');
+            $(this).addClass('activetabs');
+        })
+        
+        $('#feedback').click(function(){
+            $('.firstTab').hide()
+            $('.secondTab').hide();
+            $('.thirdTab').show();
+            $(".HorizontalTab ul li").removeClass('activetabs');
+            $(this).addClass('activetabs');
+        })
+        
+    ;})
+</script>
+ 
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="full pdgTop30">
+					<div class="col98">
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+            <?php echo $this->getBlockHtml('formkey') ?>
+            <div class="no-display">
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+<div class="col32">
+							<div class="thumbnail-slider"><?php echo $this->getChildHtml('media') ?></div>
+						</div>
+         	<div class="col40">
+							<span class="open-sans-bold-18"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>						
+							<span class="border-bar"></span>
+							<div class="full pdgTop10">
+								<div class="alignleft">
+								 <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+								</div>
+								
+								<div class="full">
+									<?php if ($_product->getShortDescription()):?>
+                    <p class="open-sansregular14 full"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></p>
+                <?php endif;?>
+								</div>
+								
+								<div class="full stock ">
+									<div class="s">Availability: <span><?php echo $this->getChildHtml('product_type_availability'); ?></span></div>
+								</div>
+								
+								<div class="full pdgTop15 sns">
+									<span class="open-sans-bold-24"><?php echo $this->getPriceHtml($_product , true); ?>
+                    <?php echo $this->getChildHtml('bundle_prices') ?>
+                    <?php echo $this->getTierPriceHtml() ?></span>
+									<?php echo $this->getChildHtml('addtocart') ?>
+									<!-- <div class="div-inc"> -->
+									<div>
+						
+										</div>
+									</div>
+								</div>
+								
+
+								<?php if ($addtoLinksHtml = $this->getChildHtml('addto')): //compare, wishlist, send to friend ?>
+
+                <div  class="awcs">
+
+                    <?php echo $addtoLinksHtml; ?>
+
+                </div>
+
+            <?php endif; ?>
+								
+								<span class="border-bar pdgTop20"></span>
+							</div>
+					
+								<div class="col26">
+															<div class="img-ad"><img src="<?php echo $this->getskinurl();?>images/img11.jpg" alt="" /></div>
+														</div>
+													</div>
+												</div>
+											</div>
+								            
+
+                <div class="full pdgTop20">
+                <div class="tabs">
+                    
+                    <div class="col98">
+                        <div class="widht62">
+                            <div class="heading-bar">
+                                <div class="bar HorizontalTab">
+                                    <ul class="tabs-cont">
+                                        <li id="descr" class="activetabs"><a href="javascript:void(0);">Description</a></li>
+                                        <li id="technical"><a href="javascript:void(0);">Technical Info</a></li>
+                                        <li id="feedback"><a href="javascript:void(0);">Feedback (5)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div id="ds" class="firsttab">
+                                <div class="full des pdgTop30">
+                                <span class="open-sans-bold-14">FreeSpace DXA 2120 digital mixer / amplifier</span>
+                                <p>The Bose® FreeSpace® DXA 2120 digital mixer/amplifier features a 6-in by 2-out design that provides signal processing, mixing, routing, paging and two-channel amplification for installed applications. </p>
+                                
+                                <p>It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.</p>
+                                
+                                <div class="full">
+                                    <span class="full open-sans-bold-14"> Technical Summary </span>
+                                    
+                                        <p>
+                                            Amplifier Power <br/>
+                                            2 x 120 W at 4 ohms , 2 x 65 W at 8 ohms, or 2 x 100 W at 70/100V<br/>
+                                        </p>
+                                        
+                                        <p>
+                                            Signal-to-Noise Ratio <br/>
+                                            75 dB (below rated power, A-weighted)<br/>
+                                        </p>
+                                        
+                                        <p>THD <br/>
+                                        =0.5 % (at full rated power)<br/>
+                                        </p>
+                                        
+                                        <p>Dynamic Range<br/> 
+                                        80 dB<br/>
+                                        </p>
+                                        
+                                        <p>Input Channels<br/> 
+                                        6 channels<br/>
+                                        </p>
+                                        
+                                        <p>
+                                        Output Channels<br/> 
+                                        2 channels<br/>
+                                        </p>
+                                </div>
+                                
+                                <div class="full">
+                                    <span class="full open-sans-bold-14">Key Features</span>
+
+                                    <p>Six inputs: four mic/line inputs with choice of balanced Euroblock or unbalanced RCA connectors, one page input and one direct input</p>
+                                    
+                                    <p>Two powered outputs that can operate at high or low impedance: 2 x 120 W at 4 ohms , 2 x 65 W at 8 ohms, or 2 x 100 W at 70/100V</p>
+                                    
+                                    <p>Three operating modes for greater flexibility in installed music or speech applications: Mixer Mode, Dual Mono Select Mode, and Stereo Select Mode</p>
+                                    
+                                    <p>Easy setup and control via onboard controls – no computer needed</p>
+                                    
+                                    <p>DSP includes loudspeaker EQs and dynamic EQ functions engineered specifically for Bose loudspeakers</p>
+                                    
+                                    <p>Opti-voice® paging provides a smooth transition between music and announcements</p>
+                                    
+                                    <p>24-volt DC backup power connection for added reliability and integration onto fire and evacuation systems</p>
+                                </div>
+                                    
+                            </div>
+                            </div>
+                            
+                            <div id="th" class=" dessecondtab">
+                                <p>Lorem Ipsum</p>
+                            </div>
+                            
+                            <div id="fd" class=" des thirdtab">
+                                <p>Lorem Ipsum</p>
+                            </div>
+                            
+                            
+                        </div>
+                    
+                        <div class="width35">
+                            <div class="heading-bar">
+                                <div class="bar">
+                                    <span class="title">Feedback</span>
+                                    <span class="viewall"><a href="javascript:void(0);">View All</a></span>
+                                </div>
+                            </div>
+                            <div class="full pdgTop10">
+                                <span class="title-14"><a href="javascript:void(0);">Peter Dager</a><small>- Apr 15 2015 - 10:22 PM</small></span>
+                                <div class="full">
+                                    <div class="alignleft">
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                </div>
+                                
+                                    <p class="open-sans-12-regular">                    
+It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.
+                                    </p>
+                                </div>
+                                
+                                <div class="full pdgTop15">
+                                    <div class="tg">
+                                        <span>Helpful? -</span>
+                                        <a href="javascript:void(0);" class="green"><b>Yes</b> (15)</a> -
+                                        <a href="javascript:void(0);" class="redd"><b>No</b> (2)</a>
+                                    </div>
+                                    <div class="alignright">
+                                        <span class="open-sans-12-regular" style="margin-top:0px;"><a href="javascript:void(0);">Report</a></span>
+                                    </div>
+                                </div>
+                                <span class="border-bar pdgTop10"></span>
+                            </div>
+                            
+                            <div class="full pdgTop10">
+                                <span class="title-14"><a href="javascript:void(0);">Peter Dager</a><small>- Apr 15 2015 - 10:22 PM</small></span>
+                                <div class="full">
+                                    <div class="alignleft">
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                </div>
+                                
+                                    <p class="open-sans-12-regular">                    
+It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.
+                                    </p>
+                                </div>
+                                
+                                <div class="full pdgTop15">
+                                    <div class="tg">
+                                        <span>Helpful? -</span>
+                                        <a href="javascript:void(0);" class="green"><b>Yes</b> (15)</a> -
+                                        <a href="javascript:void(0);" class="redd"><b>No</b> (2)</a>
+                                    </div>
+                                    <div class="alignright">
+                                        <span class="open-sans-12-regular" style="margin-top:0px;"><a href="javascript:void(0);">Report</a></span>
+                                    </div>
+                                </div>
+                                <span class="border-bar pdgTop10"></span>
+                            </div>
+                            
+                            <div class="full pdgTop10">
+                                <span class="title-14"><a href="javascript:void(0);">Peter Dager</a><small>- Apr 15 2015 - 10:22 PM</small></span>
+                                <div class="full">
+                                    <div class="alignleft">
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                </div>
+                                
+                                    <p class="open-sans-12-regular">                    
+It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.
+                                    </p>
+                                </div>
+                                
+                                <div class="full pdgTop15">
+                                    <div class="tg">
+                                        <span>Helpful? -</span>
+                                        <a href="javascript:void(0);" class="green"><b>Yes</b> (15)</a> -
+                                        <a href="javascript:void(0);" class="redd"><b>No</b> (2)</a>
+                                    </div>
+                                    <div class="alignright">
+                                        <span class="open-sans-12-regular" style="margin-top:0px;"><a href="javascript:void(0);">Report</a></span>
+                                    </div>
+                                </div>
+                                <span class="border-bar pdgTop10"></span>
+                            </div>
+                            
+                            <div class="full pdgTop10">
+                                <span class="title-14"><a href="javascript:void(0);">Peter Dager</a><small>- Apr 15 2015 - 10:22 PM</small></span>
+                                <div class="full">
+                                    <div class="alignleft">
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                </div>
+                                
+                                    <p class="open-sans-12-regular">                    
+It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.
+                                    </p>
+                                </div>
+                                
+                                <div class="full pdgTop15">
+                                    <div class="tg">
+                                        <span>Helpful? -</span>
+                                        <a href="javascript:void(0);" class="green"><b>Yes</b> (15)</a> -
+                                        <a href="javascript:void(0);" class="redd"><b>No</b> (2)</a>
+                                    </div>
+                                    <div class="alignright">
+                                        <span class="open-sans-12-regular" style="margin-top:0px;"><a href="javascript:void(0);">Report</a></span>
+                                    </div>
+                                </div>
+                                <span class="border-bar pdgTop10"></span>
+                            </div>
+                            
+                            <div class="full pdgTop10">
+                                <span class="title-14"><a href="javascript:void(0);">Peter Dager</a><small>- Apr 15 2015 - 10:22 PM</small></span>
+                                <div class="full">
+                                    <div class="alignleft">
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                </div>
+                                
+                                    <p class="open-sans-12-regular">                    
+It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.
+                                    </p>
+                                </div>
+                                
+                                <div class="full pdgTop15">
+                                    <div class="tg">
+                                        <span>Helpful? -</span>
+                                        <a href="javascript:void(0);" class="green"><b>Yes</b> (15)</a> -
+                                        <a href="javascript:void(0);" class="redd"><b>No</b> (2)</a>
+                                    </div>
+                                    <div class="alignright">
+                                        <span class="open-sans-12-regular" style="margin-top:0px;"><a href="javascript:void(0);">Report</a></span>
+                                    </div>
+                                </div>
+                                <span class="border-bar pdgTop10"></span>
+                            </div>
+                            
+                            <div class="full pdgTop10">
+                                <span class="title-14"><a href="javascript:void(0);">Peter Dager</a><small>- Apr 15 2015 - 10:22 PM</small></span>
+                                <div class="full">
+                                    <div class="alignleft">
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="fs"><img alt="" src="images/f-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                    <a href="javascript:void(0);" class="hs"><img alt="" src="images/h-s.png"></a>
+                                </div>
+                                
+                                    <p class="open-sans-12-regular">                    
+It offers three versatile operating modes and is easily configured using the controls on the front panel. No external computer is required.
+                                    </p>
+                                </div>
+                                
+                                <div class="full pdgTop15">
+                                    <div class="tg">
+                                        <span>Helpful? -</span>
+                                        <a href="javascript:void(0);" class="green"><b>Yes</b> (15)</a> -
+                                        <a href="javascript:void(0);" class="redd"><b>No</b> (2)</a>
+                                    </div>
+                                    <div class="alignright">
+                                        <span class="open-sans-12-regular" style="margin-top:0px;"><a href="javascript:void(0);">Report</a></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        
+                    </div>  
+                </div>
+            </div>
+
+
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            var productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>
+    </div>
+<!-- 
+    <div class="product-collateral toggle-content tabs">
+        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+            <dl id="collateral-tabs" class="collateral-tabs">
+                <?php foreach ($detailedInfoGroup as $alias => $html):?>
+                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+                    <dd class="tab-container">
+                        <div class="tab-content"><?php echo $html ?></div>
+                    </dd>
+                <?php endforeach;?>
+            </dl>
+        <?php endif; ?>
+    </div> -->
+
+    <?php //echo $this->getChildHtml('upsell_products') ?>
+    <?php //echo $this->getChildHtml('product_additional_data') ?>
+
+
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('newoption')->toHtml(); ?>
