@@ -60,7 +60,7 @@
                 <col class="col-img" width="1" />
                 <col />
                 <col class="col-edit" width="1" />
-            <?php// if ($this->helper('wishlist')->isAllowInCart()) : ?>
+            <?php // if ($this->helper('wishlist')->isAllowInCart()) : ?>
                 <col class="col-wish" width="1" />
             <?php //endif ?>
             <?php //if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
@@ -75,7 +75,7 @@
             <?php //endif; ?>
             <?php //if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
                 <col class="<?php //if($this->helper('tax')->displayCartBothPrices()) echo 'col-total-incl'; else echo 'col-total'; ?>" width="1" />
-            <?php// endif; ?>
+            <?php // endif; ?>
                 <col class="col-delete" width="1" />-->
 
             <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
