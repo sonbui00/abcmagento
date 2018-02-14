@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageWorx
+ * Customer Location Extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_CustomerLocation
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+ -->
+<config>
+    <sections>
+        <mageworx_geoip translate="label">
+            <groups>
+                <mageworx_customerlocation translate="label" module="mageworx_customerlocation">
+                    <label>Customer Location</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+
+                        <enable_orders translate="label">
+                            <label>Enable In Order View</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable_orders>
+
+                        <enable_online_customers translate="label">
+                            <label>Enable In Online Customers Grid</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable_online_customers>
+
+                    </fields>
+                </mageworx_customerlocation>
+            </groups>
+        </mageworx_geoip>
+    </sections>
+</config>

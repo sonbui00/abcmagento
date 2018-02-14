@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TDK_StoreRedirect>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <MageWorx_GeoIP/>
+            </depends>
+        </TDK_StoreRedirect>
+    </modules>
+</config>
