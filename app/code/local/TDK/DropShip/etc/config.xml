@@ -2,10 +2,17 @@
 <config>
     <modules>
         <TDK_DropShip>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </TDK_DropShip>
     </modules>
     <global>
+        <fieldsets>
+            <sales_convert_quote_item>
+                <supplier_id>
+                    <to_order_item>*</to_order_item>
+                </supplier_id>
+            </sales_convert_quote_item>
+        </fieldsets>
         <models>
             <tdk_dropship>
                 <class>TDK_DropShip_Model</class>
@@ -22,6 +29,11 @@
                     </supplier_product>
                 </entities>
             </tdk_dropship_resource>
+            <sales>
+                <rewrite>
+                    <quote_address>TDK_DropShip_Model_Rewrite_Sales_Quote_Address</quote_address>
+                </rewrite>
+            </sales>
         </models>
         <blocks>
             <tdk_dropship>
