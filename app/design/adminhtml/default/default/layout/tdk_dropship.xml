@@ -29,4 +29,13 @@
             <block type="tdk_dropship/adminhtml_catalog_product_tab_supplier" name="admin.supplier.product"/>
         </block>
     </adminhtml_product_supplier_grid>
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_tabs">
+            <action method="addTabAfter">
+                <name>order_drop_shipping</name>
+                <block>tdk_dropship/sales_order_view_tab_dropShipping</block>
+                <afterTabId>order_shipments</afterTabId>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
 </layout>
