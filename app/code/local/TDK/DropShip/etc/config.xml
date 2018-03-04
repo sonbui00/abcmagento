@@ -35,6 +35,7 @@
             <sales>
                 <rewrite>
                     <quote_address>TDK_DropShip_Model_Rewrite_Sales_Quote_Address</quote_address>
+                    <service_order>TDK_DropShip_Model_Rewrite_Sales_Service_Order</service_order>
                 </rewrite>
             </sales>
         </models>
