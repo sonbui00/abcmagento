@@ -43,6 +43,11 @@
             <tdk_dropship>
                 <class>TDK_DropShip_Block</class>
             </tdk_dropship>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_shipment_create_form>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_Create_Form</sales_order_shipment_create_form>
+                </rewrite>
+            </adminhtml>
         </blocks>
         <helpers>
             <tdk_dropship>
@@ -56,6 +61,17 @@
                 </setup>
             </tdk_dropship_setup>
         </resources>
+        <events>
+            <sales_order_shipment_save_after>
+                <observers>
+                    <tdk_dropship>
+                        <type>singleton</type>
+                        <class>tdk_dropship/observer</class>
+                        <method>salesOrderShipmentSaveAfter</method>
+                    </tdk_dropship>
+                </observers>
+            </sales_order_shipment_save_after>
+        </events>
     </global>
     <frontend>
         <events>

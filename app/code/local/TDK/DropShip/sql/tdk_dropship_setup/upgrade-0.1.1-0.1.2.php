@@ -38,7 +38,10 @@ $table = $installer->getConnection()
     ->addColumn('shipment_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
         'unsigned' => true,
         'nullable' => true,
-    ), 'Shipment ID');
+    ), 'Shipment ID')
+    ->addColumn('shipment_increment_id', Varien_Db_Ddl_Table::TYPE_VARCHAR, 50, array(
+        'nullable' => true,
+    ), 'Shipment Increment ID');
 
 
 $installer->getConnection()->createTable($table);
