@@ -2,7 +2,7 @@
 <config>
     <modules>
         <TDK_DropShip>
-            <version>0.1.1</version>
+            <version>0.1.2</version>
         </TDK_DropShip>
     </modules>
     <global>
@@ -27,6 +27,9 @@
                     <supplier_product>
                         <table>dropship_supplier_product</table>
                     </supplier_product>
+                    <supplier_order>
+                        <table>dropship_supplier_order</table>
+                    </supplier_order>
                 </entities>
             </tdk_dropship_resource>
             <sales>
@@ -53,6 +56,19 @@
             </tdk_dropship_setup>
         </resources>
     </global>
+    <frontend>
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <tdk_dropship>
+                        <type>singleton</type>
+                        <class>tdk_dropship/observer</class>
+                        <method>salesOrderPlaceAfter</method>
+                    </tdk_dropship>
+                </observers>
+            </sales_order_place_after>
+        </events>
+    </frontend>
     <admin>
         <routers>
             <adminhtml>

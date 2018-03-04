@@ -13,8 +13,10 @@ class TDK_DropShip_Helper_Quote_Supplier
         // fake random suppliers
         $quote = $customerAddress->getQuote();
         $items = $quote->getAllItems();
+        $i = 0;
         foreach ($items as $item) {
-            $item->setSupplierId(rand(1, 3));
+            $item->setSupplierId(($i % 3) + 1);
+            $i++;
         }
     }
 }

@@ -7,4 +7,9 @@
  */ 
 class TDK_DropShip_Helper_Data extends Mage_Core_Helper_Abstract {
 
+    public function allowDropShipForOrder(Mage_Sales_Model_Order $order)
+    {
+        return true;
+    }
+
 }
