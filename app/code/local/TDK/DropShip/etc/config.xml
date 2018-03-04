@@ -106,4 +106,17 @@
             </updates>
         </layout>
     </adminhtml>
+    <crontab>
+        <jobs>
+            <update_shipment_tracking_status>
+                <schedule>
+                    <!-- see https://crontab.guru/ At every minute past hour 1-->
+                    <cron_expr>0 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>tdk_dropship/cronJob::updateShipmentTrackingStatus</model>
+                </run>
+            </update_shipment_tracking_status>
+        </jobs>
+    </crontab>
 </config>
