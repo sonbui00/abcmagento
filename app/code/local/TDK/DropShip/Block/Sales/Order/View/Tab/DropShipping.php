@@ -19,16 +19,12 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
 
     protected function _prepareCollection()
     {
-        $supplierId = array();
-        foreach ($this->getOrder()->getAllItems() as $item) {
-            $_id = (int) $item->getSupplierId();
-            if ($_id && !in_array($_id)) {
-                $supplierId[] = $_id;
-            }
-        }
-
         $collection = Mage::getResourceModel('tdk_dropship/supplier_collection')
-            ->addFieldToFilter('supplier_id', $supplierId)
+            ->join(
+                array('supplierOrder' => 'tdk_dropship/supplier_order'),
+                'main_table.supplier_id = supplierOrder.supplier_id'
+            )
+            ->addFieldToFilter('order_id', $this->getOrder()->getId())
         ;
         $this->setCollection($collection);
         return parent::_prepareCollection();
@@ -64,6 +60,13 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
                 'index' => 'email',
             ));
 
+        $this->addColumn('shipment',
+            array(
+                'header' => 'Shipment',
+                'align' => 'left',
+                'index' => 'shipment_id',
+            ));
+
         return parent::_prepareColumns();
     }
 
@@ -79,18 +82,27 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
 
     public function getRowUrl($row)
     {
-        return $this->getUrl(
-            '*/sales_order_shipment/new',
-            array(
-                'supplier_id'=> $row->getId(),
-                'order_id'  => $this->getOrder()->getId(),
-            ));
+        if ($row->getShipmentId()) {
+            return $this->getUrl(
+                '*/sales_order_shipment/view',
+                array(
+                    'shipment_id'=> $row->getShipmentId(),
+                    'order_id'  => $this->getOrder()->getId(),
+                ));
+        } else {
+            return $this->getUrl(
+                '*/sales_order_shipment/new',
+                array(
+                    'supplier_id'=> $row->getId(),
+                    'order_id'  => $this->getOrder()->getId(),
+                ));
+        }
     }
 
-    public function getGridUrl()
-    {
-        return $this->getUrl('*/*/shipments', array('_current' => true));
-    }
+//    public function getGridUrl()
+//    {
+//        return $this->getUrl('*/*/shipments', array('_current' => true));
+//    }
 
     /**
      * ######################## TAB settings #################################
