@@ -119,4 +119,11 @@
             </update_shipment_tracking_status>
         </jobs>
     </crontab>
+    <default>
+        <shipping>
+            <dropship>
+                <allow>0</allow>
+            </dropship>
+        </shipping>
+    </default>
 </config>
