@@ -13,8 +13,8 @@ class TDK_Zipcode_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getDistance($zipcode1, $country1, $zipcode2, $country2)
     {
-        $c1 = $this->getDistance($zipcode1, $country1);
-        $c2 = $this->getDistance($zipcode2, $country2);
+        $c1 = $this->_getLatLng($zipcode1, $country1);
+        $c2 = $this->_getLatLng($zipcode2, $country2);
 
         return $this->_getDistanceOpt($c1[0], $c1[1], $c2[0], $c2[1]);
     }
@@ -32,6 +32,7 @@ class TDK_Zipcode_Helper_Data extends Mage_Core_Helper_Abstract
         
         if (!$coordinate->getId()) {
             $latlng = $this->_getLatLngFromGoogleMap($address);
+            $coordinate->setZipcode($address);
             $coordinate->setLat($latlng[0]);
             $coordinate->setLng($latlng[1]);
             $coordinate->save();
@@ -69,7 +70,7 @@ class TDK_Zipcode_Helper_Data extends Mage_Core_Helper_Abstract
     protected function _getLatLngFromGoogleMap($address)
     {
         $address = urlencode($address);
-        $url = "https://maps.googleapis.com/maps/api/geocode/json?address={$address}&key={$this::API_KEY}";
+        $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "&key=" . $this::API_KEY;
         // Get JSON results from this request
         $geo = file_get_contents($url);
         $geo = json_decode($geo, true); // Convert the JSON to an array
