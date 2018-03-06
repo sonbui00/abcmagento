@@ -43,6 +43,12 @@
                     <shipping>TDK_DropShip_Model_Rewrite_Shipping_Shipping</shipping>
                 </rewrite>
             </shipping>
+            <usa>
+                <rewrite>
+                    <shipping_carrier_ups>TDK_DropShip_Model_Rewrite_Usa_Shipping_Carrier_Ups</shipping_carrier_ups>
+                    <shipping_carrier_usps>TDK_DropShip_Model_Rewrite_Usa_Shipping_Carrier_Usps</shipping_carrier_usps>
+                </rewrite>
+            </usa>
         </models>
         <blocks>
             <tdk_dropship>
@@ -51,6 +57,7 @@
             <adminhtml>
                 <rewrite>
                     <sales_order_shipment_create_form>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_Create_Form</sales_order_shipment_create_form>
+                    <sales_order_shipment_packaging>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_Packaging</sales_order_shipment_packaging>
                 </rewrite>
             </adminhtml>
         </blocks>
