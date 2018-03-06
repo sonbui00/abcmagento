@@ -19,7 +19,7 @@ class TDK_DropShip_Model_Observer
         $supplierId = array();
         foreach ($order->getAllItems() as $item) {
             $_id = (int) $item->getSupplierId();
-            if ($_id && !in_array($supplierId)) {
+            if ($_id && !in_array($_id, $supplierId)) {
                 $supplierId[] = $_id;
                 Mage::getModel('tdk_dropship/supplierOrder')
                     ->setOrderId($order->getId())

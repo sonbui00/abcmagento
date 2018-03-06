@@ -38,6 +38,11 @@
                     <service_order>TDK_DropShip_Model_Rewrite_Sales_Service_Order</service_order>
                 </rewrite>
             </sales>
+            <shipping>
+                <rewrite>
+                    <shipping>TDK_DropShip_Model_Rewrite_Shipping_Shipping</shipping>
+                </rewrite>
+            </shipping>
         </models>
         <blocks>
             <tdk_dropship>
