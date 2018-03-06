@@ -111,7 +111,7 @@ class TDK_DropShip_Helper_Quote_Supplier
                 unset($itemsSuppliers[$itemId]);
             }
         }
-        Mage::app()->getCache()->save(serialize($bestCase), $cacheKey);
+        Mage::app()->getCache()->save(serialize($result), $cacheKey);
 
         return $result;
 

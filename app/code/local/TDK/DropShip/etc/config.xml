@@ -89,6 +89,15 @@
                     </tdk_dropship>
                 </observers>
             </sales_order_place_after>
+            <sales_order_place_before>
+                <observers>
+                    <tdk_dropship>
+                        <type>singleton</type>
+                        <class>tdk_dropship/observer</class>
+                        <method>salesOrderPlaceBefore</method>
+                    </tdk_dropship>
+                </observers>
+            </sales_order_place_before>
         </events>
     </frontend>
     <admin>

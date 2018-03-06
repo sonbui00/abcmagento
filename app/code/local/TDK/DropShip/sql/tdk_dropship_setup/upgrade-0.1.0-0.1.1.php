@@ -16,7 +16,7 @@ $installer->getConnection()
         'supplier_id',
         array(
             'type'      => Varien_Db_Ddl_Table::TYPE_INTEGER,
-            'unsigned'  => true,
+            'unsigned'  => false,
             'nullable'  => true,
             'comment'   => 'Supplier ID',
         )
@@ -27,7 +27,7 @@ $installer->getConnection()
         'supplier_id',
         array(
             'type'      => Varien_Db_Ddl_Table::TYPE_INTEGER,
-            'unsigned'  => true,
+            'unsigned'  => false,
             'nullable'  => true,
             'comment'   => 'Supplier ID',
         )

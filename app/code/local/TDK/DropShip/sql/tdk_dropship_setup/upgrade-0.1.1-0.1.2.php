@@ -25,7 +25,7 @@ $table = $installer->getConnection()
         'primary' => true,
     ), 'Id')
     ->addColumn('supplier_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        'unsigned' => true,
+        'unsigned' => false,
         'nullable' => false,
     ), 'Supplier ID')
     ->addColumn('order_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(

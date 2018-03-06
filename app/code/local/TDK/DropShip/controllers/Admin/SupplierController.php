@@ -110,4 +110,27 @@ class TDK_DropShip_Admin_SupplierController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/');
     }
 
+    /**
+     * Generate suppliers grid for ajax request
+     */
+    public function orderGridAction()
+    {
+        $id = $this->getRequest()->getParam('order_id');
+        $order = Mage::getModel('sales/order')->load($id);
+
+        if (!$order->getId()) {
+            $this->_getSession()->addError($this->__('This order no longer exists.'));
+            $this->_redirect('*/*/');
+            $this->setFlag('', self::FLAG_NO_DISPATCH, true);
+            return false;
+        }
+
+        Mage::register('sales_order', $order);
+        Mage::register('current_order', $order);
+
+        $this->getResponse()->setBody(
+            $this->getLayout()->createBlock('tdk_dropship/sales_order_view_tab_dropShipping')->toHtml()
+        );
+    }
+
 }

@@ -22,7 +22,6 @@ class TDK_DropShip_Model_Adminhtml_System_Config_Backend_Cron extends Mage_Core_
         }
         catch (Exception $e) {
             throw new Exception(Mage::helper('cron')->__('Unable to save the cron expression.'));
-
         }
     }
 }

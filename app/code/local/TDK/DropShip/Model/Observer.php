@@ -9,6 +9,16 @@
 class TDK_DropShip_Model_Observer
 {
 
+    public function salesOrderPlaceBefore($event)
+    {
+        /** @var Mage_Sales_Model_Order $order */
+        $order = $event->getOrder();
+        if (!Mage::helper('tdk_dropship')->allowDropShipForOrder($order)) {
+            return;
+        }
+        $order->setData('can_ship_partially_item', 0);
+    }
+
     public function salesOrderPlaceAfter($event)
     {
         /** @var Mage_Sales_Model_Order $order */

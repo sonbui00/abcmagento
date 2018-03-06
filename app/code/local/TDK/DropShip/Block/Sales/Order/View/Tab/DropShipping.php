@@ -22,7 +22,8 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
         $collection = Mage::getResourceModel('tdk_dropship/supplier_collection')
             ->join(
                 array('supplierOrder' => 'tdk_dropship/supplier_order'),
-                'main_table.supplier_id = supplierOrder.supplier_id'
+                'main_table.supplier_id = supplierOrder.supplier_id',
+                array('order_id')
             )
             ->addFieldToFilter('order_id', $this->getOrder()->getId())
         ;
@@ -36,7 +37,6 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
             array(
                 'header' => 'ID',
                 'align' => 'right',
-                'width' => '50px',
                 'index' => 'supplier_id',
             ));
 
@@ -99,10 +99,10 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
         }
     }
 
-//    public function getGridUrl()
-//    {
-//        return $this->getUrl('*/*/shipments', array('_current' => true));
-//    }
+    public function getGridUrl()
+    {
+        return $this->getUrl('*/supplier/orderGrid', array('_current' => true));
+    }
 
     /**
      * ######################## TAB settings #################################
