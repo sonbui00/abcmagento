@@ -32,6 +32,9 @@
                                     <supplier>
                                         <title>Manage Suppliers</title>
                                     </supplier>
+                                    <shipments>
+                                        <title>Shipments</title>
+                                    </shipments>
                                 </children>
                             </dropship>
                         </children>

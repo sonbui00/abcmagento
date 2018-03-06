@@ -141,4 +141,14 @@ class TDK_DropShip_Admin_SupplierController extends Mage_Adminhtml_Controller_Ac
         $this->renderLayout();
     }
 
+    public function supplierViewShipmentAction()
+    {
+        if (false !== ($shipmentId = $this->getRequest()->getParam('shipment_id', false))) {
+            $this->_forward('view', 'sales_order_shipment', null, array('come_from'=>'shipment'));
+        }
+        if (false !== ($shipmentId = $this->getRequest()->getParam('supplier_id', false))) {
+            $this->_forward('new', 'sales_order_shipment', null, array('come_from'=>'shipment'));
+        }
+    }
+
 }

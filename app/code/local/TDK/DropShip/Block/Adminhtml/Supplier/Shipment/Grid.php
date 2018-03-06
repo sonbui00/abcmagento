@@ -25,8 +25,10 @@ class TDK_DropShip_Block_Adminhtml_Supplier_Shipment_Grid
                 array('supplier' => 'tdk_dropship/supplier'),
                 'main_table.supplier_id = supplier.supplier_id'
             )
-//            ->addFieldToFilter('order_id', $this->getOrder()->getId())
         ;
+        if ($this->getSupplierUser()->getId()) {
+            $collection->addFieldToFilter('supplier.supplier_id', $this->getSupplierUser()->getId());
+        }
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -82,19 +84,55 @@ class TDK_DropShip_Block_Adminhtml_Supplier_Shipment_Grid
     public function getRowUrl($row)
     {
         if ($row->getShipmentId()) {
+            if (!$this->getSupplierUser()->getId()) {
+                return $this->getUrl(
+                    '*/sales_order_shipment/view',
+                    array(
+                        'shipment_id'=> $row->getShipmentId(),
+                        'order_id'  => $row->getOrderId(),
+                        'back_url' => Mage::helper('core')->urlEncode($this->getCurrentUrl()),
+                    ));
+            }
             return $this->getUrl(
-                '*/sales_order_shipment/view',
+                '*/supplierShipment/view',
                 array(
                     'shipment_id'=> $row->getShipmentId(),
                     'order_id'  => $row->getOrderId(),
+                    'back_url' => Mage::helper('core')->urlEncode($this->getCurrentUrl()),
                 ));
         } else {
+            if (!$this->getSupplierUser()->getId()) {
+                return $this->getUrl(
+                    '*/sales_order_shipment/new',
+                    array(
+                        'supplier_id' => $row->getId(),
+                        'order_id' => $row->getOrderId(),
+                        'back_url' => Mage::helper('core')->urlEncode($this->getCurrentUrl()),
+                    ));
+            }
             return $this->getUrl(
-                '*/sales_order_shipment/new',
+                '*/supplierShipment/new',
                 array(
                     'supplier_id'=> $row->getId(),
                     'order_id'  => $row->getOrderId(),
+                    'back_url' => Mage::helper('core')->urlEncode($this->getCurrentUrl()),
                 ));
         }
+    }
+
+    protected $_supplierUser;
+
+    public function getSupplierUser()
+    {
+        if (!isset($this->_supplierUser)){
+            $userId = Mage::getSingleton('admin/session')->getUser()->getUserId();
+
+            $this->_supplierUser = Mage::getResourceModel('tdk_dropship/supplier_collection')
+                ->addFieldToFilter('admin_user_id', $userId)
+                ->getFirstItem();
+        }
+
+        return $this->_supplierUser;
+
     }
 }

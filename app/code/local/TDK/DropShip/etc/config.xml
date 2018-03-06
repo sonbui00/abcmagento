@@ -58,6 +58,8 @@
                 <rewrite>
                     <sales_order_shipment_create_form>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_Create_Form</sales_order_shipment_create_form>
                     <sales_order_shipment_packaging>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_Packaging</sales_order_shipment_packaging>
+                    <sales_order_shipment_create>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_Create</sales_order_shipment_create>
+                    <sales_order_shipment_view>TDK_DropShip_Block_Rewrite_Adminhtml_Sales_Order_Shipment_View</sales_order_shipment_view>
                 </rewrite>
             </adminhtml>
         </blocks>
