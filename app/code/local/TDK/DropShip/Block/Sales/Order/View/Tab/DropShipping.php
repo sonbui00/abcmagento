@@ -23,7 +23,7 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
             ->join(
                 array('supplierOrder' => 'tdk_dropship/supplier_order'),
                 'main_table.supplier_id = supplierOrder.supplier_id',
-                array('order_id')
+                array('order_id', 'shipment_id', 'shipment_increment_id')
             )
             ->addFieldToFilter('order_id', $this->getOrder()->getId())
         ;
@@ -64,7 +64,7 @@ class TDK_DropShip_Block_Sales_Order_View_Tab_DropShipping
             array(
                 'header' => 'Shipment',
                 'align' => 'left',
-                'index' => 'shipment_id',
+                'index' => 'shipment_increment_id',
             ));
 
         return parent::_prepareColumns();

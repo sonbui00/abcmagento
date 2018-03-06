@@ -38,4 +38,9 @@
             </action>
         </reference>
     </adminhtml_sales_order_view>
+    <adminhtml_supplier_shipments>
+        <reference name="content">
+            <block name="supplier_shipments_grid" type="tdk_dropship/adminhtml_supplier_shipment_grid_container"/>
+        </reference>
+    </adminhtml_supplier_shipments>
 </layout>

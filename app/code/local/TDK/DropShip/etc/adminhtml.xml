@@ -11,6 +11,10 @@
                             <title>Manage Suppliers</title>
                             <action>adminhtml/supplier</action>
                         </supplier>
+                        <shipments>
+                            <title>Shipments</title>
+                            <action>adminhtml/supplier/shipments</action>
+                        </shipments>
                     </children>
                 </dropship>
             </children>

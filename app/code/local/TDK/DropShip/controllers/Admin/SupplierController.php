@@ -133,4 +133,12 @@ class TDK_DropShip_Admin_SupplierController extends Mage_Adminhtml_Controller_Ac
         );
     }
 
+    public function shipmentsAction()
+    {
+        $this->_title($this->__('Drop Ships'))->_title($this->__('Shipments'));
+        $this->loadLayout();
+        $this->_setActiveMenu('sales/dropship/shipments');
+        $this->renderLayout();
+    }
+
 }
