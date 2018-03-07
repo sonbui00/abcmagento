@@ -35,6 +35,8 @@ class TDK_DropShip_Model_Observer
                     ->setOrderId($order->getId())
                     ->setSupplierId($_id)
                     ->save();
+
+                Mage::helper('tdk_dropship/email')->newOrderSupplier($order, $_id);
             }
         }
     }

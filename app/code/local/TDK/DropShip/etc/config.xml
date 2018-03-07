@@ -2,7 +2,7 @@
 <config>
     <modules>
         <TDK_DropShip>
-            <version>0.1.3</version>
+            <version>0.1.4</version>
         </TDK_DropShip>
     </modules>
     <global>
@@ -108,6 +108,13 @@
                 </observers>
             </sales_order_place_before>
         </events>
+        <layout>
+            <updates>
+                <tdk_dropship>
+                    <file>tdk_dropship.xml</file>
+                </tdk_dropship>
+            </updates>
+        </layout>
     </frontend>
     <admin>
         <routers>

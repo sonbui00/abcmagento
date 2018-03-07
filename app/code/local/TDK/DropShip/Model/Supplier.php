@@ -121,4 +121,9 @@ class TDK_DropShip_Model_Supplier extends Mage_Core_Model_Abstract
         return false;
     }
 
+    public function getFullName()
+    {
+        return $this->getFirstName() + ' ' + $this->getLastName();
+    }
+
 }

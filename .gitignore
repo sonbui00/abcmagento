@@ -61,3 +61,4 @@ dev/tests/functional
 .DS_Store
 
 /adminer.php
+/aliash.sh

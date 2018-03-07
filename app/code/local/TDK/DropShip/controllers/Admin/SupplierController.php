@@ -151,4 +151,12 @@ class TDK_DropShip_Admin_SupplierController extends Mage_Adminhtml_Controller_Ac
         }
     }
 
+    public function testAction()
+    {
+        $order = Mage::getModel('sales/order')->load(1486);
+        $supplier = 1;
+        Mage::helper('tdk_dropship/email')->newOrderSupplier($order, $supplier);
+        die('OK');
+    }
+
 }
