@@ -155,7 +155,7 @@ class TDK_DropShip_Admin_SupplierController extends Mage_Adminhtml_Controller_Ac
     {
         $shipment = Mage::getModel('sales/order_shipment')->load(1171);
         $supplier = 1;
-        Mage::helper('tdk_dropship/email')->deliveredShipmentCustomer($shipment, $supplier);
+        Mage::helper('tdk_dropship/email')->deliveredShipmentSupplier($shipment, $supplier);
         die('OK');
     }
 

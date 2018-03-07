@@ -68,8 +68,8 @@ class TDK_DropShip_Helper_Email extends Mage_Core_Helper_Abstract
 
     /**
      * @param Mage_Sales_Model_Order_Shipment $shipment
+     * @param $supplier
      * @return $this
-     * @throws Exception
      */
     public function deliveredShipmentSupplier($shipment, $supplier)
     {
@@ -114,11 +114,8 @@ class TDK_DropShip_Helper_Email extends Mage_Core_Helper_Abstract
      * @return $this
      * @throws Exception
      */
-    public function deliveredShipmentCustomer($shipment, $supplier)
+    public function deliveredShipmentCustomer($shipment)
     {
-        if (is_int($supplier)) {
-            $supplier = Mage::helper('tdk_dropship/supplierProxy')->getSupplier($supplier);
-        }
         $order = $shipment->getOrder();
         $storeId = $order->getStore()->getId();
 
