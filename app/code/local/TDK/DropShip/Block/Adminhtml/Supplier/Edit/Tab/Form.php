@@ -163,7 +163,7 @@ class TDK_DropShip_Block_Adminhtml_Supplier_Edit_Tab_Form
 
     public function countryOptionArray()
     {
-        return Mage::getResourceModel('directory/country_collection')->loadData()->toOptionArray(false);
+        return Mage::getResourceModel('directory/country_collection')->loadData()->toOptionArray();
     }
 
     public function countryRegionOptionArray($countryId)

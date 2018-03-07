@@ -28,10 +28,10 @@ class TDK_DropShip_Block_Adminhtml_Supplier_Edit
 
     public function getHeaderText()
     {
-        if (Mage::registry('suppliers_data') && Mage::registry('suppliers_data')->getId()) {
-            return 'Edit ' . $this->escapeHtml(Mage::registry('suppliers_data')->getTitle());
+        if (Mage::registry('current_supplier') && Mage::registry('current_supplier')->getId()) {
+            return 'Edit supplier \'' . $this->escapeHtml(Mage::registry('current_supplier')->getFullName()) . '\'';
         } else {
-            return 'Add';
+            return 'Add a new supplier';
         }
     }
 }
