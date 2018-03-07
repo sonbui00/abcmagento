@@ -28,6 +28,8 @@
 
 $installer = $this;
 
+$installer->startSetup();
+
 $emailContent = <<<HTML
 {{template config_path="design/email/header"}}
 {{inlinecss file="email-inline.css"}}
@@ -120,3 +122,5 @@ try {
 } catch (Exception $e){
     Mage::logException($e->getMessage());
 }
+
+$installer->endSetup();
