@@ -39,7 +39,7 @@ $emailContent = <<<HTML
                 <tr>
                     <td class="email-heading">
                         <h1>Some order items need your action from {{var store.getFrontendName()}}.</h1>
-                        <p>Please help us prepare package to ship items. Order items summary is below. Thank you again for your business.</p>
+                        <p>Hi {{var supplier.getFullName()}}! Please help us prepare package to ship items. Order items summary is below. Thank you again for your business.</p>
                     </td>
                     <td class="store-info">
                         <h4>Order Questions?</h4>
