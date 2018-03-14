@@ -1073,7 +1073,8 @@ class SM_XPos_Adminhtml_XposController extends Mage_Adminhtml_Sales_Order_Create
 
             $this->_getSession()->clear();
             /*send email to customer --------------------------------------------------*/
-            if (Mage::helper('xpos/data')->isEmailConfirmationEnabled()) {
+            if (Mage::helper('xpos/data')->isEmailConfirmationEnabled()
+                && !in_array($order->getPayment()->getMethod(), array('ultimoauthorize', 'authorizenet'))) {
 
                 /* Sending email | Send email */
                 $doEmailReceipt = $this->getRequest()->getParam('doemailreceipt');
