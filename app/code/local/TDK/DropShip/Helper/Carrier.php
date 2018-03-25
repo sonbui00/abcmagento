@@ -37,6 +37,9 @@ class TDK_DropShip_Helper_Carrier extends Mage_Core_Helper_Abstract
 
     protected function _getSupplierId()
     {
+	    if ($supplierId = Mage::registry('current_supplier_id')) {
+	    	return $supplierId;
+	    }
         return Mage::app()->getRequest()->getParam('supplier_id', false);
     }
 }

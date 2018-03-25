@@ -6,7 +6,7 @@
 #    Action php5-cgi /cgi-bin/php5-cgi
 #    AddHandler php5-cgi .php
 
-suPHP_ConfigPath /home/abckar5/public_html
+#suPHP_ConfigPath /home/abckar5/public_html
 
 ############################################
 ## GoDaddy specific options

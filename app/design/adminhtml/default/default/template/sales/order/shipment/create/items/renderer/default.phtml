@@ -37,9 +37,9 @@
         <?php endif; ?>
     </td>
     <?php if (!$this->canShipPartiallyItem()): ?>
-<!--    <td class="a-center last">
-        <input type="hidden" name="shipment[items][<?php /*echo $_item->getOrderItemId() */?>]" value="0" />
-        <input type="checkbox" name="shipment[items][<?php /*echo $_item->getOrderItemId() */?>]" value="<?php /*echo $_item->getQty()*1 */?>" checked />
-    </td>-->
+    <td class="a-center last">
+        <input type="hidden" name="shipment[items][<?php echo $_item->getOrderItemId() ?>]" value="0" />
+        <input type="checkbox" name="shipment[items][<?php echo $_item->getOrderItemId() ?>]" value="<?php echo $_item->getQty()*1 ?>" checked />
+    </td>
     <?php endif; ?>
 </tr>
