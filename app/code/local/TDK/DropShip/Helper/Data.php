@@ -33,7 +33,7 @@ class TDK_DropShip_Helper_Data
         }
 	    $carrier = $order->getShippingCarrier();
 
-        if ($carrier || !($carrier instanceof Mage_Shipping_Model_Carrier_Abstract)) {
+        if (!$carrier || !($carrier instanceof Mage_Shipping_Model_Carrier_Abstract)) {
         	return false;
         }
 
