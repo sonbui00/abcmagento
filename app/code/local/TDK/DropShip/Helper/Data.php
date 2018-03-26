@@ -31,9 +31,14 @@ class TDK_DropShip_Helper_Data
         if (!$this->_allowStoreDropShip($store)) {
             return false;
         }
+	    $carrier = $order->getShippingCarrier();
 
-        $carrier = $order->getShippingCarrier()->getCarrierCode();
-        if (!in_array($carrier, array('ups', 'usps'))) {
+        if ($carrier || !($carrier instanceof Mage_Shipping_Model_Carrier_Abstract)) {
+        	return false;
+        }
+
+        $carrierCode = $carrier->getCarrierCode();
+        if (!in_array($carrierCode, array('ups', 'usps'))) {
             return false;
         }
 
