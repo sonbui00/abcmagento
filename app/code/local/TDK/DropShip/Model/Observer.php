@@ -107,6 +107,8 @@ class TDK_DropShip_Model_Observer {
 			Mage::unregister('current_supplier_id');
 			Mage::register('current_supplier_id', $supplierId);
 			$savedQtys = array();
+			$weight = 0;
+			$customsValue = 0;
 			$package   = array(
 				1 => array(
 					'params' => array(
@@ -137,6 +139,14 @@ class TDK_DropShip_Model_Observer {
 					'order_item_id' => $item->getId(),
 				);
 				$package[1]['items'][$item->getId()] = $packageItem;
+				$weight += floatval($item->getWeight());
+				$customsValue += floatval($item->getPrice());
+			}
+			$package[1]['params']['weight'] = $weight;
+			$package[1]['params']['customs_value'] = $customsValue;
+			if ($order->getShippingCarrier()->getCarrierCode() === 'ups') {
+				$package[1]['params']['container'] = '00';
+				$package[1]['params']['delivery_confirmation'] = '0';
 			}
 			$shipment = Mage::getModel( 'sales/service_order', $order )->prepareShipment( $savedQtys );
 
