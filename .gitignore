@@ -57,3 +57,8 @@ dev/tests/functional
 /.ftpquota
 /.idea/
 /28-aug.jpg
+
+.DS_Store
+
+/adminer.php
+/aliash.sh

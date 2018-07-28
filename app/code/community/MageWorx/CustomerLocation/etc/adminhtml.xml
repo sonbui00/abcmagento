@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageWorx
+ * Customer Location Extension
+ *
+ * @category   MageWorx
+ * @package    MageWorx_CustomerLocation
+ * @copyright  Copyright (c) 2015 MageWorx (http://www.mageworx.com/)
+ */
+ -->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mageworx_geoip>
+                                        <children>
+                                            <mageworx_customerlocation translate="title" module="mageworx_customerlocation">
+                                                <title>Customer Location</title>
+                                            </mageworx_customerlocation>
+                                        </children>
+                                    </mageworx_geoip>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
