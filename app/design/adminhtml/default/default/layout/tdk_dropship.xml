@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_supplier_index>
+        <reference name="content">
+            <block name="supplier_grid" type="tdk_dropship/adminhtml_supplier_grid_container"/>
+        </reference>
+    </adminhtml_supplier_index>
+    <adminhtml_supplier_edit>
+        <reference name="content">
+            <block type="tdk_dropship/adminhtml_supplier_edit" name="supplier_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="tdk_dropship/adminhtml_supplier_edit_tabs" name="supplier_edit_tabs"/>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" template="dropship/edit_supplier_js.phtml"/>
+        </reference>
+    </adminhtml_supplier_edit>
+    <adminhtml_catalog_product_edit>
+        <reference name="product_tabs">
+            <action method="addTab">
+                <name>supplierProduct</name>
+                <block>tdk_dropship/adminhtml_catalog_product_tab_supplier</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+    <adminhtml_product_supplier_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="tdk_dropship/adminhtml_catalog_product_tab_supplier" name="admin.supplier.product"/>
+        </block>
+    </adminhtml_product_supplier_grid>
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_tabs">
+            <action method="addTabAfter">
+                <name>order_drop_shipping</name>
+                <block>tdk_dropship/sales_order_view_tab_dropShipping</block>
+                <afterTabId>order_shipments</afterTabId>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+    <adminhtml_supplier_shipments>
+        <reference name="content">
+            <block name="supplier_shipments_grid" type="tdk_dropship/adminhtml_supplier_shipment_grid_container"/>
+        </reference>
+    </adminhtml_supplier_shipments>
+</layout>
