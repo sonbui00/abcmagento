@@ -103,7 +103,7 @@ class TDK_DropShip_Model_Observer {
 
 		*/
 
-		foreach ( $supplierItems as $supplierId => $items ) {
+		/*foreach ( $supplierItems as $supplierId => $items ) {
 			Mage::unregister('current_supplier_id');
 			Mage::register('current_supplier_id', $supplierId);
 			$savedQtys = array();
@@ -168,7 +168,7 @@ class TDK_DropShip_Model_Observer {
 			    ->addObject( $shipment->getOrder() )
 			    ->save();
 
-		}
+		}*/
 	}
 
 	public function salesOrderShipmentSaveAfter( $event ) {

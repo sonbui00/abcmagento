@@ -70,7 +70,7 @@ class TDK_DropShip_Model_Rewrite_Shipping_Shipping
                 */
                 if (false !== $result){
                     if (!$result instanceof Mage_Shipping_Model_Rate_Result_Error) {
-                        $result = $this->_aaaaaaaa($request, $carrier);
+                        $result = $this->_collectRate($request, $carrier);
                         if (!$result) {
                             return $this;
                         }
@@ -125,7 +125,7 @@ class TDK_DropShip_Model_Rewrite_Shipping_Shipping
      * @param $carrier
      * @return array|mixed
      */
-    protected function _aaaaaaaa($request, $carrier)
+    protected function _collectRate($request, $carrier)
     {
         if ($carrier->getConfigData('shipment_requesttype')) {
             $packages = $this->composePackagesForCarrier($carrier, $request);
