@@ -518,3 +518,9 @@ td{/*width:100%*/}
 
 .skin dt,.fork-me{-webkit-transition:background-color .2s;-moz-transition:background-color .2s;-ms-transition:background-color .2s;-o-transition:background-color .2s;transition:background-color .2s}
 
+.cms-page-view .css_content ul {
+    margin: 0 0 1em;
+    padding: 0;
+    list-style: disc outside none;
+    padding-left: 1.5em;
+}
