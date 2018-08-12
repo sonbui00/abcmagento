@@ -192,7 +192,7 @@ class TDK_DropShip_Model_Observer {
 		}
 	}
 
-	protected function _createShippingLabel( Mage_Sales_Model_Order_Shipment $shipment, $package ) {
+	/*protected function _createShippingLabel( Mage_Sales_Model_Order_Shipment $shipment, $package ) {
 		if ( ! $shipment ) {
 			return false;
 		}
@@ -232,7 +232,7 @@ class TDK_DropShip_Model_Observer {
 		}
 
 		return true;
-	}
+	}*/
 
 
 	/**
@@ -242,7 +242,7 @@ class TDK_DropShip_Model_Observer {
 	 *
 	 * @return Zend_Pdf
 	 */
-	protected function _combineLabelsPdf( array $labelsContent ) {
+	/*protected function _combineLabelsPdf( array $labelsContent ) {
 		$outputPdf = new Zend_Pdf();
 		foreach ( $labelsContent as $content ) {
 			if ( stripos( $content, '%PDF-' ) !== false ) {
@@ -259,7 +259,7 @@ class TDK_DropShip_Model_Observer {
 		}
 
 		return $outputPdf;
-	}
+	}*/
 
 	/**
 	 * Create Zend_Pdf_Page instance with image from $imageString. Supports JPEG, PNG, GIF, WBMP, and GD2 formats.
@@ -268,7 +268,7 @@ class TDK_DropShip_Model_Observer {
 	 *
 	 * @return Zend_Pdf_Page|bool
 	 */
-	protected function _createPdfPageFromImageString( $imageString ) {
+	/*protected function _createPdfPageFromImageString( $imageString ) {
 		$image = imagecreatefromstring( $imageString );
 		if ( ! $image ) {
 			return false;
@@ -287,5 +287,5 @@ class TDK_DropShip_Model_Observer {
 		unlink( $tmpFileName );
 
 		return $page;
-	}
+	}*/
 }

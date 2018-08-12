@@ -21,6 +21,12 @@ class TDK_DropShip_Helper_Data
             return false;
         }
 
+	    $postCode = $quote->getShippingAddress()->getPostcode();
+
+	    if (!$postCode || $this->isPostCodeFromHawaii($postCode)) {
+	    	return false;
+	    }
+
         return true;
     }
 
@@ -42,6 +48,12 @@ class TDK_DropShip_Helper_Data
             return false;
         }
 
+        $postCode = $order->getShippingAddress()->getPostcode();
+
+	    if (!$postCode || $this->isPostCodeFromHawaii($postCode)) {
+		    return false;
+	    }
+
         return true;
     }
 
@@ -53,5 +65,10 @@ class TDK_DropShip_Helper_Data
         }
         return $store->getConfig('shipping/dropship/allow');;
     }
+
+	protected function isPostCodeFromHawaii($postCode ) {
+    	$postCode = (int) $postCode;
+    	return $postCode >= 96701 && $postCode <= 96898;
+	}
 
 }
