@@ -22,16 +22,16 @@ if (!$var['printGift']) { ?>
                     </tr>
                 <?php endif; ?>
             <?php endif; ?>
-<?php if(Mage::getModel('xpos/integrate')->isIntegrateWithGiftVoucher()):?>
-            <tr>
-                <td><?php echo $this->__('Gift Voucher') ?></td>
-                <td align="right">
-                    <strong>
-                        <?php echo $this->getOrder()->formatPrice($this->getOrder()->getGiftVoucherDiscount());?>
-                    </strong>
-                </td>
-            </tr>
-<?php endif;?>
+            <?php if(Mage::getModel('xpos/integrate')->isIntegrateWithGiftVoucher()):?>
+                <tr>
+                    <td><?php echo $this->__('Gift Voucher') ?></td>
+                    <td align="right">
+                        <strong>
+                            <?php echo $this->getOrder()->formatPrice($this->getOrder()->getGiftVoucherDiscount());?>
+                        </strong>
+                    </td>
+                </tr>
+            <?php endif;?>
 
             <?php if (Mage::getModel('xpos/integrate')->isIntegrateMageWorldRp()) { ?>
                 <?php
@@ -184,10 +184,22 @@ if (!$var['printGift']) { ?>
                 <td><?php echo $this->helper('xpos')->__('Total Paid') ?></td>
                 <td align="right"><strong><?php echo $this->getTotalPaidFromTransaction(); ?></strong></td>
             </tr>
-            <?php if($this->getOrder()->getPayment()->getMethod() == 'ultimoauthorize' && (float) $this->getOrder()->getTotalRefunded()):?>
+            <?php if($this->getOrder()->getPayment()->getMethod() == 'ultimoauthorize'
+                && ((float) $this->getOrder()->getTotalRefunded()
+                    || $this->getOrder()->getStatus() == 'cancelled'
+                )):?>
                 <tr>
                     <td><?php echo $this->helper('xpos')->__('Total Refund') ?></td>
-                    <td align="right"><strong><?php echo $this->getOrder()->formatPrice($this->getOrder()->getTotalRefunded()); ?></strong></td>
+                    <td align="right">
+                        <strong>
+                            <?php //echo $this->getOrder()->formatPrice($this->getOrder()->getTotalRefunded()); ?>
+                            <?php if($this->getOrder()->getStatus() == 'cancelled'): ?>
+                                <?php echo $this->getOrder()->formatPrice($this->getGrandTotal()); ?>
+                            <?php else: ?>
+                                <?php echo $this->getOrder()->formatPrice($this->getOrder()->getTotalRefunded()); ?>
+                            <?php endif ?>
+                        </strong>
+                    </td>
                 </tr>
             <?php endif; ?>
             <?php if ($this->getChange() != false): ?>
