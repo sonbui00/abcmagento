@@ -47,7 +47,11 @@ else  $action = array(
     'reload'=>array('class'=>'back','label'=>'Reload','url'=>$this->getUrl('*/*/index', array('order_id' => $orderId, 'action'=>'reload'))),
 );
 if( $orderStatus == "canceled"){
-    unset($action['printinvoice']);
+    if($_order->getPayment()->getMethod() == 'ultimoauthorize') {
+        //do smth
+    } else {
+        unset($action['printinvoice']);
+    }
 }
 
 if(!$_order->canShip()){
