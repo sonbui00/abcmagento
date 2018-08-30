@@ -247,7 +247,7 @@ class Infortis_Ultimo_Block_Product_List_Featured extends Mage_Catalog_Block_Pro
 			if ($this->getIsRandom()) {
 				$collection->getSelect()->order('rand()');
 			} else {
-				$collection->setOrder('position');
+				$collection->setOrder('position', 'ASC');
 			}
 
 			$collection->addStoreFilter();
