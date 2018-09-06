@@ -186,7 +186,7 @@ if (!$var['printGift']) { ?>
             </tr>
             <?php if($this->getOrder()->getPayment()->getMethod() == 'ultimoauthorize'
                 && ((float) $this->getOrder()->getTotalRefunded()
-                    || $this->getOrder()->getStatus() == 'cancelled'
+                    || $this->getOrder()->getStatus() == 'canceled'
                 )):?>
                 <tr>
                     <td><?php echo $this->helper('xpos')->__('Total Refund') ?></td>
