@@ -194,7 +194,7 @@ if (!$var['printGift']) { ?>
                         <strong>
                             <?php //echo $this->getOrder()->formatPrice($this->getOrder()->getTotalRefunded()); ?>
                             <?php if($this->getOrder()->getStatus() == 'canceled'): ?>
-                                <?php echo $this->getOrder()->formatPrice($this->getGrandTotal()); ?>
+                                <?php echo $this->getOrder()->formatPrice($this->getOrder()->getGrandTotal()); ?>
                             <?php else: ?>
                                 <?php echo $this->getOrder()->formatPrice($this->getOrder()->getTotalRefunded()); ?>
                             <?php endif ?>
