@@ -62,8 +62,6 @@ class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
     public function postAction()
     {
         $post = $this->getRequest()->getPost();
-        Mage::log(implode(';', $post), null, 'contact-form.log', true);
-        return;
         if ( $post ) {
             $translate = Mage::getSingleton('core/translate');
             /* @var $translate Mage_Core_Model_Translate */
